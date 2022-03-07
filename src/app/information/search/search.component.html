@@ -1,0 +1,32 @@
+<br>
+<h5 class="d-flex justify-content-left">FIGI Search</h5><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <input placeholder="Name,FIGI,Ticker" [(ngModel)]="theSearch" type="text" class="form-control" (keyup)="Filter()" required>
+        </div>
+        <div class="col-sm">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>FIGI</th>
+                        <th>Name</th>
+                        <th>Ticker</th>
+                        <th>Exch Code</th>
+                        <th>Security</th>
+                        <th>Market Sector</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="theSearch.length>0 ">
+                    <tr *ngFor="let dataItem of theFIGIFIlterList">
+                        <td>{{dataItem.figi}}</td>
+                        <td>{{dataItem.name}}</td>
+                        <td>{{dataItem.ticker}}</td>
+                        <td>{{dataItem.echCode}}</td>
+                        <td>{{dataItem.marketSector}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

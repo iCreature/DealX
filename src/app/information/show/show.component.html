@@ -1,0 +1,36 @@
+<br><br>
+<div class="container">
+    <h5 class="d-flex justify-content-left">FIGI Information</h5><br>
+    <nav class="navbar navbar-expand-sm bg-light-gray navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <button class="m-1 btn btn-dark secondary" (click)="refreshFIGIInfoList()">
+                 <b>Load Information</b> 
+                </button>
+            </li>
+        </ul>
+    </nav>
+    <br><br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>FIGI</th>
+                <th>Name</th>
+                <th>Ticker</th>
+                <th>Exch Code</th>
+                <th>Security</th>
+                <th>Market Sector</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dataItem of theFIGIInfo">
+                <td>{{dataItem.figi}}</td>
+                <td>{{dataItem.name}}</td>
+                <td>{{dataItem.ticker}}</td>
+                <td>{{dataItem.echCode}}</td>
+                <td>{{dataItem.marketSector}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
